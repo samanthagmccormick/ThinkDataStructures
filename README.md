@@ -1,7 +1,14 @@
-# ThinkDataStructures
+# How to build and run the project (command line)
+
+```cd code```
+```ant``` - builds the whole project
+```ant ListClientExample``` - runs a specific class
+---
+```ant clean``` - deletes compiled /bin folder contents to start fresh
+
+# ThinkDataStructures Book Info
 
 LaTeX source and supporting code for *Think Data Structures: Algorithms and Information Retrieval in Java*
-
 
 Data structures and algorithms are among the most important inventions
 of the last 50 years, and they are fundamental tools
