@@ -1,8 +1,8 @@
 # How to build and run the project (command line)
 
 ```cd code```
-```ant``` - builds the whole project
-```ant ListClientExample``` - runs a specific class
+```ant``` builds the whole project
+```ant ListClientExample``` runs a specific class
 ---
 ```ant clean``` - deletes compiled /bin folder contents to start fresh
 
