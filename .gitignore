@@ -1,4 +1,8 @@
+# Compiled files
 *.class
+code/junit
+
+# IntelliJ
 *.idea
 
 # Mobile Tools for Java (J2ME)
