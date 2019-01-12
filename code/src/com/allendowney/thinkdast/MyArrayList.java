@@ -41,11 +41,24 @@ public class MyArrayList<T> implements List<T> {
 		System.out.println(Arrays.toString(mal.toArray()) + " size = " + mal.size);
 	}
 
-	@Override
-	public boolean add(T element) {
-		// TODO: FILL THIS IN!
-		return false;
-	}
+  /**
+   * Appends the specified element to the end of this list (optional operation).
+   *
+   * @param element
+   * @return
+   */
+  @Override
+  public boolean add(T element) {
+		if (size >= array.length) {
+			// make a bigger array and copy over the elements
+			T[] bigger = (T[]) new Object[array.length * 2];
+			System.arraycopy(array, 0, bigger, 0, array.length);
+			array = bigger;
+		}
+		array[size] = element;
+		size++;
+		return true;
+  }
 
 	@Override
 	public void add(int index, T element) {
@@ -190,10 +203,25 @@ public class MyArrayList<T> implements List<T> {
 		return true;
 	}
 
+  /**
+   * Removes the element at the specified position in this list (optional operation). Shifts any
+   * subsequent elements to the left (subtracts one from their indices). Returns the element that
+   * was removed from the list.
+   *
+   * @param index
+   * @return the item previously at that index
+   */
 	@Override
 	public T remove(int index) {
-		// TODO: FILL THIS IN!
-		return null;
+		T previousValue = get(index);
+
+		for (int i = index; i < size - 1; i++) {
+			array[i] = array[i + 1];
+		}
+
+		size = size--;
+
+		return previousValue;
 	}
 
 	@Override
