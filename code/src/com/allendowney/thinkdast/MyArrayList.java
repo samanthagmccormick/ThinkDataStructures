@@ -18,7 +18,6 @@ public class MyArrayList<T> implements List<T> {
 	/**
 	 *
 	 */
-	@SuppressWarnings("unchecked")
 	public MyArrayList() {
 		// You can't instantiate an array of T[], but you can instantiate an
 		// array of Object and then typecast it.  Details at
@@ -199,11 +198,13 @@ public class MyArrayList<T> implements List<T> {
 		throw new UnsupportedOperationException();
 	}
 
-	@Override
-	public T set(int index, T element) {
-		// TODO: FILL THIS IN!
-		return null;
-	}
+  @Override
+  public T set(int index, T element) {
+    T previousValue = get(index);
+    array[index] = element;
+
+    return previousValue;
+  }
 
 	@Override
 	public int size() {
