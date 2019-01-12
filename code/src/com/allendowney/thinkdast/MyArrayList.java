@@ -107,10 +107,22 @@ public class MyArrayList<T> implements List<T> {
 		return array[index];
 	}
 
+	/**
+	 * Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element. More formally, returns the lowest index i such that (o==null ? get(i)==null : o.equals(get(i))), or -1 if there is no such index.
+	 *
+	 * @param obj
+	 * @return the index of the first occurrence of the specified element in this list, or -1 if
+	 * this list does not contain the element
+	 */
 	@Override
 	public int indexOf(Object target) {
-		// TODO: FILL THIS IN!
+		for (int i = 0; i < array.length; i++) {
+			if (equals(target, array[i])) {
+				return i;
+			}
+		}
 		return -1;
+
 	}
 
 	/** Checks whether an element of the array is the target.
